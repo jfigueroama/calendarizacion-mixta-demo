@@ -1,0 +1,26 @@
+header {
+	display: flex;
+}
+
+.contenedorPrincipal {
+	width: 900px;
+	display: flex;
+	flex-direction: column;
+}
+
+.contenedor-info-grupoYAnio {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tabla-horario tr, th {
+	text-align: center;
+}
+
+.tabla-horario .hora {
+	width: 100px;
+}
+
+.celdamany {
+  background-color: magenta;
+}

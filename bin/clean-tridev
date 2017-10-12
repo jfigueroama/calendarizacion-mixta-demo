@@ -1,0 +1,2 @@
+rm -rf public/js/trihorario/edicion/out
+rm public/js/trihorario/edicion/app-dev.js

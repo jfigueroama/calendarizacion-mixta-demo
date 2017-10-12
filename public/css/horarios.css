@@ -1,0 +1,313 @@
+body {
+    min-width: 800px;
+}
+
+#app {
+    min-width: 800px;
+}
+
+.principal {
+    margin: 0px;
+    padding: 2px;
+    min-width: 800px;
+    width: 100%;
+
+}
+.cabecera {
+    padding: 2px;
+    margin: 0px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: #F4EDED;
+    min-height: 80px;
+    min-width: 800px;
+}
+
+.contenido {
+    margin-top: 100px;
+}
+
+.titulo {
+    font-size: x-large;
+}
+
+.oculto {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.celda {
+}
+
+.profesor { background-color: #FFEFD6; }
+.sel-profesor { background-color: #FFB847; color: black; }
+.asignatura { background-color: #F4EAFF;}
+.sel-asignatura { background-color: #B06BFF;  color: black;}
+.grupo { background-color: #E0FFDD; }
+.sel-grupo { background-color: #7EFF72;  color: black;}
+.teoria { background-color: #E5F6FF; }
+.sel-teoria { background-color: #38C0FF;  color: black;}
+.practica { background-color: #EFDEDE; }
+.sel-practica { background-color: #C49393;  color: black;}
+.typ { background-color: #FFE5F6; }
+.sel-typ { background-color: #FF93D9;  color: black;}
+
+.borrada {text-decoration: line-through;}
+
+.comentario { background-color: #f0ffdb; }
+
+.ic-selected {
+  color: #FF0000;
+}
+
+.ic-normal{
+  color: #0000FF;
+}
+
+.entidad-datos {
+    display: inline;
+}
+
+.colisiones-globales {
+    font-weight: normal;
+    font-size: medium;
+    color: red;
+}
+
+.colisiones-locales {
+    color: red;
+    font-size: medium;
+}
+
+table {
+    border-spacing: 0px;
+    border-style: solid;
+    border-color: #E5E5E5;
+}
+
+tr {
+    margin: 0px;
+    padding: 0px;
+}
+
+td {
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    margin: 0px;
+    padding: 2px;
+    border-spacing: 0px;
+    border-color: #E5E5E5;
+}
+
+/* Layout principal */
+
+
+/* Panel de edicion */
+
+.panel-edicion {
+    position: fixed;
+    left: 30%;
+    top: 0px;
+    margin-top: 10px;
+    width: 69%;
+    z-index: 1000;
+}
+
+.fdrawer {
+    padding-left: 6px;
+}
+
+svg {
+    z-index: -1;
+}
+
+.panel-edicion-oculto {
+    display: none;
+}
+
+.pe-horarioasignacion {
+    position: relative;
+    width: 20%;
+    display: inline;
+    float: left;
+}
+
+.pe-horarioclases {
+    position: relative;
+    float: right;
+    width: 20%;
+    display: inline;
+}
+
+.pe-seleccionado {
+    background-color: #A5FFB3;
+ /*   background-color: yellow; */
+}
+
+.pe-cambiado {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+/* Tabla horarios */
+
+
+.tabla_titulo {
+    font-weight: bolder;
+    font-size: large;
+}
+
+.tabla_toggle {
+    font-weight: normal;
+    font-size: small;
+}
+
+.multicelda {
+    border-style: solid;
+    border-color: gray;
+    margin: 2px;
+    border-width: 1px;
+    background-color: white;
+}
+
+
+
+.hora-extendida {
+    color: #ADADAD;
+}
+
+/* Celda con colisiones */
+.concol {
+    background-color: red;
+}
+.sincol {
+    background-color: green;
+}
+
+.lecture {
+  background-color: #EAFEFF;
+  margin-bottom: 5px;
+}
+
+.lg {
+  width: auto;
+  max-width: 400px;
+  background-color: #D9F4F4;
+  margin-bottom: 5px;
+}
+
+.lg td {
+  margin-left: 0px;
+  margin-right: 0px;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.lg th {
+  background-color: #EBFECF;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.td-left {
+  text-align: right;
+}
+
+.letipo {
+  font-weight: bold;
+}
+
+.nd {
+  width: 40px;
+}
+
+.shtpdesc {
+  text-align: justify;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.entidad-libre {
+    color: black;
+    font-weight: bold;
+}
+
+.entidad-ocupada {
+    color: lightgray;
+    text-decoration: line-through;
+}
+
+.cargo {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #caf2f9;
+}
+
+.panel-dato {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.capacidad-titulo {
+    background-color: #caf2f9;
+    color: "black";
+}
+.capacidad {
+    background-color: #caf2f9;
+    color: #1e1bd1;
+    font-weight: normal;
+}
+
+.capacidad-titulo-small {
+    background-color: #caf2f9;
+    color: "black";
+    font-size: small;
+}
+.capacidad-small {
+    background-color: #caf2f9;
+    color: #1e1bd1;
+    font-size: small;
+}
+
+
+
+.recurso {
+    background-color: #fffdd8;
+}
+
+.alterno {
+    text-decoration: underline;
+}
+
+.espacio-espacio {
+    background-color: #cad2f9;
+    color: #1e1bd1;
+    font-size: small;
+}
+
+.tespacio a {
+    font-size: small;
+    font-weight: normal;
+}
+
+.cambio {
+}
+
+.cambio .usuario {
+    font-weight: bold;
+}
+.cambio .movimientos {
+    color: green;
+}
