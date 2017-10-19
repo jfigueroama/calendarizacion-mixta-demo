@@ -8,17 +8,17 @@
                  ;[org.clojure/clojurescript "1.9.562"]
                  [reagent "0.6.0"
                   :exclusions
-                  [org.clojure/tools.reader cljsjs/react]
-                  ]
+                  [org.clojure/tools.reader cljsjs/react]]
+
                  ;[binaryage/devtools "0.8.3"]
                  [re-frame "0.9.2" :exclusions [cljsjs/react]]
                  ;[cljsjs/react-with-addons "15.4.2-2"]
                  [cljs-ajax "0.5.8"]
                  ;[cljsjs/material-ui "0.16.4-0"]
-                 [cljs-react-material-ui "0.2.30" ; "0.2.37"
+                 [cljs-react-material-ui "0.2.30"] ; "0.2.37"
                   ;:exclusions
                   ;[org.clojure/tools.reader cljsjs/react cljsjs/react-dom]
-                  ]
+
                  [com.cognitect/transit-cljs "0.8.239"]
                  [keybind "2.0.0"]
                  [figwheel-sidecar "0.5.9"]
@@ -62,8 +62,8 @@
 
   :main server.core
 
-  :plugins [[lein-cljsbuild "1.1.4"; :exclusions [[org.clojure/clojure]]
-             ]
+  :plugins [[lein-cljsbuild "1.1.4"]; :exclusions [[org.clojure/clojure]]
+
             [lein-ancient "0.6.10"]]
 
   :min-lein-version "2.5.3"
@@ -71,20 +71,20 @@
   :source-paths ["src"] ;[ "src/clj"]
 
   :clean-targets
-  ^{:protect false}  ["public/js/horario/edicion/out"
-                      "public/js/horario/edicion/devcards_out"
-                      "public/js/horario/edicion/out/app-dev.js"
-                      "public/js/horario/edicion/out/app-devcards.js"
-                      "public/js/horario/edicion/out/app.js"
+  ^{:protect false}  ["resources/public/js/trihorario/edicion/out"
+                      "resources/public/js/trihorario/edicion/devcards_out"
+                      "resources/public/js/trihorario/edicion/out/app-dev.js"
+                      "resources/public/js/trihorario/edicion/out/app-devcards.js"
+                      "resources/public/js/trihorario/edicion/out/app.js"
                       "target"]
 
-  :figwheel {:css-dirs ["public/css"]
+  :figwheel {:css-dirs ["resources/public/css"]}
              ;:hawk-options {:watcher :polling}
-             }
+
 
   :profiles
   {:dev
-   {:dependencies [ [binaryage/devtools "0.8.2"] ]
+   {:dependencies [ [binaryage/devtools "0.8.2"]]
                    ;[devcards "0.2.2" :exclusions [cljsjs/react cljsjs/react-dom]]]
 
     :plugins      [ [lein-figwheel "0.5.9"]]}}
@@ -100,9 +100,9 @@
      :source-paths ["src/trihorario/edicion"]
      :figwheel     {:load-warninged-code false}
      :compiler     {:main                 trihorario.edicion.core
-                    :output-to            "public/js/trihorario/edicion/app-dev.js"
-                    :output-dir           "public/js/trihorario/edicion/out"
-                    :asset-path           "/public/js/trihorario/edicion/out"
+                    :output-to            "resources/public/js/trihorario/edicion/app-dev.js"
+                    :output-dir           "resources/public/js/trihorario/edicion/out"
+                    :asset-path           "/js/trihorario/edicion/out"
                     :closure-defines      {goog.DEBUG true}
                     ;:preloads             [devtools.preload]
                     ;:external-config      {:devtools/config
@@ -111,45 +111,11 @@
     {:id           "triprod"
      :source-paths ["src/trihorario/edicion"]
      :compiler     {:main            trihorario.edicion.core
-                    :output-to       "public/js/trihorario/edicion/app.js"
+                    :output-to       "resources/public/js/trihorario/edicion/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
                     :pretty-print    false}}
-    ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    {:id           "hedev" ; horario-edicion-dev
-     :source-paths ["src/horario/edicion"]
-     :figwheel     {;:on-jsload "horario.edicion.core/mount-root"
-                    :load-warninged-code false
-                    ;:server-port 3449
-                    }
-     :compiler     {:main                 horario.edicion.core
-                    :output-to            "public/js/horario/edicion/app-dev.js"
-                    :output-dir           "public/js/horario/edicion/out"
-                    :asset-path           "/public/js/horario/edicion/out"
-                    :closure-defines      {goog.DEBUG true}
-                    :source-map-timestamp true}}
-    {:id           "hedc"
-     :source-paths ["src/horario/edicion"]
-     :figwheel     {;:on-jsload "horario.edicion.core/mount-root"
-                    :load-warninged-code true
-                    ;:server-port 3450
-                    :devcards true}
-     :compiler     {:devcards true
-                    :main                 horario.edicion.devcards
-                    :output-to            "public/js/horario/edicion/app-devcards.js"
-                    :output-dir           "public/js/horario/edicion/devcards_out"
-                    :asset-path           "/public/js/horario/edicion/devcards_out"
-                    :closure-defines      {goog.DEBUG true}
-                    :source-map-timestamp true}}
-
-    {:id           "heprod"
-     :source-paths ["src/horario/edicion"]
-     :compiler     {:main            horario.edicion.core
-                    :output-to       "public/js/horario/edicion/app.js"
-                    :output-dir      "public/js/horario/edicion"
-                    :optimizations   :advanced
-                    :closure-defines {goog.DEBUG false}
-                    :pretty-print    false}}]}
+    ]}
 
 
     ; Edicion x grupos
@@ -177,4 +143,3 @@
 
 
   :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]})
-

@@ -10,6 +10,9 @@
         ring.middleware.multipart-params
         ;ring.middleware.cookies
         ring.middleware.session
+        ring.middleware.resource
+        ring.middleware.content-type
+        ring.middleware.not-modified
         ring.util.response))
 
 (defn app-routes
@@ -54,7 +57,8 @@
          (fn test-hn [req]
            "hola chicos feliz"))
 
-    (route/files "/public/")))
+    #_(route/files "public")
+    #_(route/files "/resources/public/")))
      ; TODO incluir files
 
 
@@ -72,6 +76,8 @@
                       wrap-params
                       wrap-session
                       wrap-multipart-params
+
+                      (wrap-resource "public")
                       ;wrap-cookies
                       )]
       (assoc component :handler handler)))

@@ -87,12 +87,14 @@
         "./src/server/handlers.clj"
 
         (reload-system))
+
 (reload (require '[domain.horarios :as horarios])
         "./src/domain/horarios.clj"
         (reload-system))
 
 
 (def system (app config))
+
 (alter-var-root #'system component/start)
 #_(alter-var-root #'system component/stop)
 (def dbc (:db system))

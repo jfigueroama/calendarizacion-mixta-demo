@@ -12,8 +12,9 @@
 
  (start [component]
    (println ";; Starting App in mode " (:mode config))
-   (component/start-system component [:db :handler :comm :webserver])
-   (println "Please open the url " (-> config :webapp :base-url) ))
+   (let [system (component/start-system component [:db :handler :comm :webserver])]
+     (println "Please open the url " (-> config :webapp :base-url))
+     system ))
  (stop [component]
    (println ";; Stopping App")
    (component/stop-system component [:db :handler :comm :webserver])))

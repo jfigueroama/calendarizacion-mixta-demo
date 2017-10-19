@@ -18,8 +18,8 @@
       (assoc component :server server)))
   (stop [component]
     (println ";; Stoping Web Server")
-    (when server
-      (server)
+    (when (:server component)
+      ((:server component))
       (assoc component :server nil))))
 
 (defn new-webserver
